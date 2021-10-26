@@ -15,6 +15,7 @@ public class Entidade implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String nome;
+    private String sobreNome;
     private String cpfCnpj;
     private String rg;
     private String cep;
@@ -25,6 +26,9 @@ public class Entidade implements Serializable {
     private boolean cliente;
     private boolean usuario;
     private boolean fornecedor;
+    @Column(columnDefinition = "boolean default false")
+    private boolean socio;
+    public String observacao;
 
     private LocalDate dataNascimento;
 
@@ -137,5 +141,29 @@ public class Entidade implements Serializable {
 
     public void setFornecedor(boolean fornecedor) {
         this.fornecedor = fornecedor;
+    }
+
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
+
+    public String getSobreNome() {
+        return sobreNome;
+    }
+
+    public void setSobreNome(String sobreNome) {
+        this.sobreNome = sobreNome;
+    }
+
+    public boolean isSocio() {
+        return socio;
+    }
+
+    public void setSocio(boolean socio) {
+        this.socio = socio;
     }
 }

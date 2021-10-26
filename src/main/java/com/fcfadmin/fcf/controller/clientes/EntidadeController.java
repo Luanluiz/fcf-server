@@ -47,4 +47,13 @@ public class EntidadeController {
         entidadeRepository.delete(entidade);
     }
 
+    @RequestMapping("/socios")
+    public List<Entidade> buscarSocios() {
+        return entidadeRepository.buscarSocios();
+    }
+
+    @RequestMapping("/total-socio")
+    public int totalSocios() {
+        return entidadeRepository.totalSocios();
+    }
 }

@@ -17,6 +17,7 @@ public class Financeiro implements Serializable {
     private Long idEntidade;
     private String nomeEntidade;
     private String tipoDocumento;
+    private String documento;
     private LocalDate emissao;
     private LocalDate vencimento;
     private BigDecimal valor;
@@ -93,5 +94,13 @@ public class Financeiro implements Serializable {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getDocumento() {
+        return documento;
+    }
+
+    public void setDocumento(String documento) {
+        this.documento = documento;
     }
 }

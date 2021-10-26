@@ -13,4 +13,7 @@ public interface FinanceiroRepository extends JpaRepository<Financeiro, Long> {
 
     @Query("from Financeiro where tipo = 'P' order by status")
     List<Financeiro> buscarListaPagar();
+
+    @Query("from Financeiro where tipo = ?1 and status = ?2")
+    List<Financeiro> buscarDadosFinanceiro(String tipo, String status);
 }

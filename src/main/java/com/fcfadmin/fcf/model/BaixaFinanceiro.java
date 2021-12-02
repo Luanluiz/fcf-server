@@ -3,6 +3,7 @@ package com.fcfadmin.fcf.model;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "baixafinanceiro")
@@ -15,6 +16,8 @@ public class BaixaFinanceiro implements Serializable {
     private Long id;
     private BigDecimal valor;
     private Long idFinanceiro;
+    private LocalDate dataBaixa;
+    private String meioPagamento;
 
     public Long getId() {
         return id;
@@ -38,5 +41,21 @@ public class BaixaFinanceiro implements Serializable {
 
     public void setIdFinanceiro(Long idFinanceiro) {
         this.idFinanceiro = idFinanceiro;
+    }
+
+    public LocalDate getDataBaixa() {
+        return dataBaixa;
+    }
+
+    public void setDataBaixa(LocalDate dataBaixa) {
+        this.dataBaixa = dataBaixa;
+    }
+
+    public String getMeioPagamento() {
+        return meioPagamento;
+    }
+
+    public void setMeioPagamento(String meioPagamento) {
+        this.meioPagamento = meioPagamento;
     }
 }

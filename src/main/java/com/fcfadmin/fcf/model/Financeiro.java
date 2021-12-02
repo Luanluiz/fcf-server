@@ -23,6 +23,7 @@ public class Financeiro implements Serializable {
     private BigDecimal valor;
     private String tipo;
     private String status;
+    private Long idContrato;
 
     public Long getId() {
         return id;
@@ -102,5 +103,13 @@ public class Financeiro implements Serializable {
 
     public void setDocumento(String documento) {
         this.documento = documento;
+    }
+
+    public Long getIdContrato() {
+        return idContrato;
+    }
+
+    public void setIdContrato(Long idContrato) {
+        this.idContrato = idContrato;
     }
 }

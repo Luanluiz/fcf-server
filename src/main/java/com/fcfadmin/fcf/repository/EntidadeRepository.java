@@ -19,6 +19,9 @@ public interface EntidadeRepository extends JpaRepository<Entidade, Long> {
 
     @Query("select count(id) from Entidade where socio = true")
     public int totalSocios();
+
+    @Query("from Entidade where nome = ?1")
+    Entidade getPorNome(String nome);
 }
 
 

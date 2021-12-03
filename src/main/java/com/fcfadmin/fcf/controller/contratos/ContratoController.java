@@ -40,6 +40,8 @@ public class ContratoController {
     @RequestMapping(value = "/salvar", method = RequestMethod.POST)
     public Contrato salvar(@RequestBody Contrato contrato) {
         Entidade entidade = entidadeRepository.getPorNome(contrato.getNomeEntidade());
+        entidade.setSocio(true);
+        entidadeRepository.save(entidade);
         contrato.setIdEntidade(entidade.getId());
         Contrato c = contratoRepository.save(contrato);
         LocalDate data = c.getDataInicio();
